@@ -139,11 +139,16 @@ tests.
 ### Releasing
 
 Swift Package Manager uses Git tags as versions. Tag a commit on `main` with
-a plain semantic version and push it:
+a semantic version (`vX.Y.Z` or `X.Y.Z`) and push it:
 
 ```bash
-git tag 0.1.0 && git push origin 0.1.0
+git tag v0.1.1 && git push origin v0.1.1
 ```
+
+The tag push automatically creates a GitHub Release with generated release
+notes. A prerelease suffix, such as `v0.2.0-rc.1`, creates a prerelease.
+Rerunning the workflow preserves any existing release and its edited notes.
+Do not move published tags.
 
 ## License
 
